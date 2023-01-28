@@ -12,13 +12,16 @@ abstract class BaseViewFragment<T:ViewDataBinding>: Fragment() {
 
     protected lateinit var binding:T
 
+    protected lateinit var rootView:View
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         //view
 //        val view = inflater.inflate(getSubLayoutId(), container, false)
 //        val binding = DataBindingUtil.bind<T>(view)
 
         val binding = DataBindingUtil.inflate<T>(inflater, getSubLayoutId(), container, false)
-        return binding!!.root
+        rootView=binding.root
+        return rootView
     }
 
     abstract fun getSubLayoutId():Int

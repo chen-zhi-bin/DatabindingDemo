@@ -19,10 +19,16 @@ abstract class BaseVmFragment<T : ViewDataBinding, VM : ViewModel> : BaseViewFra
         initViewModel()
         //观察ViewModel数据变化 --》更新ui
         observerData()
+        //初始化相关控件
+        initView()
         //设置相关的事件
         initEvent()
         //开始加载数据
         startLoadData()
+    }
+
+    open fun initView(){
+
     }
 
     open fun startLoadData(){

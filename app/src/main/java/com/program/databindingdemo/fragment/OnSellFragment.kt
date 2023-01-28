@@ -11,6 +11,11 @@ class OnSellFragment:BaseVmFragment<FragmentOnSellBinding,OnSellViewModel>() {
         return OnSellViewModel::class.java
     }
 
+    override fun startLoadData() {
+        //加载数据
+        viewModel.loadData()
+    }
+
     override fun observerData() {
         super.observerData()
         //观察Viewmodel里的数据变化

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:sob="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,14 +12,16 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
+            android:contentDescription="@string/goods_pic_text"
+            sob:goodsImages="@{itemData.pict_url}"
+            sob:testValue="@{itemData.title}"
             android:layout_width="100dp"
             android:layout_height="100dp"
-
-            android:src="@mipmap/ic_launcher"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,10 +45,13 @@
             app:layout_constraintGuide_begin="120dp" />
 
         <TextView
+            android:textStyle="bold"
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:maxLines="2"
             android:text="@{itemData.title}"
             android:textSize="18sp"
@@ -62,13 +68,13 @@
             app:layout_constraintGuide_begin="70dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/originalPriseTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="@{@string/final_prise_text(Float.valueOf(itemData.zk_final_price))}"
+            sob:finalPrise="@{itemData.zk_final_price}"
             android:textColor="@color/text_grey"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
@@ -84,7 +90,7 @@
             android:text="@{@string/off_prise_text(Float.valueOf(itemData.zk_final_price)-itemData.coupon_amount)}"
             android:textColor="@color/prise_color"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/originalPriseTv"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
         <TextView
@@ -95,7 +101,7 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/originalPriseTv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

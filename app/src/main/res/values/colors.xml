@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="text_grey">#999</color>
     <color name="prise_color">#ff4500</color>
+    <color name="list_bg_grey">#E9E9E9</color>
 </resources>

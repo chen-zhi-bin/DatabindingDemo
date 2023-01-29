@@ -3,6 +3,7 @@
     <string name="name_text">姓名：</string>
     <string name="age_text">年龄：</string>
     <string name="gender_text">性别：</string>
+    <string name="goods_pic_text">商品图片</string>
 
     <string name="final_prise_text">原价:%.2f</string>
     <string name="off_prise_text">券后价:%.2f</string>

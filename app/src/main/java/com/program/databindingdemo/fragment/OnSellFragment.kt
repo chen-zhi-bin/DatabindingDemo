@@ -1,11 +1,15 @@
 package com.program.databindingdemo.fragment
 
+import android.graphics.Rect
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.program.databindingdemo.R
 import com.program.databindingdemo.adapter.OnSellListAdapter
 import com.program.databindingdemo.base.BaseVmFragment
 import com.program.databindingdemo.databinding.FragmentOnSellBinding
+import com.program.databindingdemo.utils.SizeUtils
 import com.program.databindingdemo.viewmodel.OnSellViewModel
 import kotlinx.android.synthetic.main.fragment_on_sell.view.*
 
@@ -46,8 +50,18 @@ class OnSellFragment:BaseVmFragment<FragmentOnSellBinding,OnSellViewModel>() {
             layoutManager = LinearLayoutManager(context)
             //设置适配器
             adapter = mAdapter
-            //todo:设置间距
-
+            //:设置间距
+            addItemDecoration(object : RecyclerView.ItemDecoration(){
+                override fun getItemOffsets(
+                    outRect: Rect,
+                    view: View,
+                    parent: RecyclerView,
+                    state: RecyclerView.State
+                ) {
+                    //单位是px，不适配,5dp--转成px
+                    outRect.bottom = SizeUtils.dip2px(requireContext(),5.0f)
+                }
+            })
         }
     }
 

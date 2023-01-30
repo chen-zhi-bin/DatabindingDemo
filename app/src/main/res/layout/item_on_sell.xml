@@ -7,6 +7,10 @@
     <data>
 
         <variable
+            name="eventHandler"
+            type="com.program.databindingdemo.adapter.OnSellListAdapter.EventHandler" />
+        
+        <variable
             name="itemData"
             type="com.program.databindingdemo.domain.OnSellItem" />
     </data>
@@ -14,7 +18,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@color/white"
         android:layout_width="match_parent"
+        android:onLongClick="@{eventHandler::onItemLongClick}"
+        android:onClick="@{(view)->eventHandler.onSingleClick(view)}"
         android:layout_height="wrap_content">
+
+<!--        lambda表达试写法(绑定监听器)可以有多个参数，另一个（方法引用）只能有且只有一个view参数-->
+<!--        android:onClick="@{(view)->eventHandler.onItemClick(view,itemData.title,itemData.item_id)}"-->
 
         <ImageView
             android:contentDescription="@string/goods_pic_text"

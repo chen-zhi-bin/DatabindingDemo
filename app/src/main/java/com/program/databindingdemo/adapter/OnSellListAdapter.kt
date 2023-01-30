@@ -54,6 +54,14 @@ class OnSellListAdapter :RecyclerView.Adapter<OnSellListAdapter.InnerHolder>(){
         //拿到对应位置的数据
         val itemData = mContentList[position]
 
+        //给这个itemBinding设置eventHandler
+        holder.binding.eventHandler = EventHandler(itemData)
+
+//        holder.itemView.setOnClickListener {
+//            //点击事件
+//            println("${itemData.title} 被点击了")
+//        }
+
         //绑定数据，想binding里设置数据
         //要有binding
         //holder.binding.xxx= 拿到的数据
@@ -73,5 +81,16 @@ class OnSellListAdapter :RecyclerView.Adapter<OnSellListAdapter.InnerHolder>(){
         //这里是全部更新
         //如果是添加到头部或尾部就部分更新
         notifyDataSetChanged()
+    }
+
+    inner class EventHandler(val itemData:OnSellItem){
+        fun onSingleClick(itemView: View){
+            println("onSingleClick() ${itemData.title}")
+        }
+
+        fun onItemLongClick(itemView: View):Boolean{
+            println("onItemLongClick() ${itemData.title}")
+            return true
+        }
     }
 }

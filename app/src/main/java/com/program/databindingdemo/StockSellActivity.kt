@@ -23,20 +23,27 @@ class StockSellActivity:AppCompatActivity() {
             R.layout.activity_stock_sell
         )
         //ui变化去通知数据变化
+        //监听ui数据变化
         priseTv.filters = arrayOf(PriseNumberFilter())
-        binding.lifecycleOwner=this
+        binding.lifecycleOwner=this //没有这个的话，数据更新就没法通知ui更新
         binding.viewModel=viewModel
         viewModel.apply {
             val that=this@StockSellActivity
             currentPrise.observe(that, Observer {
                 println("当前价格变化了 ==>$it")
+                updateTotalPrise()
             })
             stockCount.observe(that, Observer {
                 println("出售的股票数量变化了==》 $it")
+                updateTotalPrise()
+            })
+            agreement.observe(that, Observer {
+                println("has check ==> $it")
             })
         }
     }
     //数据变化时通知ui
+    //监听数据变化
     fun updatePrise(view: View){
         viewModel.currentPrise.value="56.90"
     }

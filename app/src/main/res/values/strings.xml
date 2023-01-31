@@ -8,4 +8,5 @@
     <string name="final_prise_text">原价:%.2f</string>
     <string name="off_prise_text">券后价:%.2f</string>
     <string name="sell_count_format_text">%d人以购买</string>
+    <string name="temp_unit_text">°C</string>
 </resources>

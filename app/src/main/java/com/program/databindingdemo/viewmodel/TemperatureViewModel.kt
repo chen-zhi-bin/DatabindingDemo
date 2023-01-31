@@ -9,7 +9,7 @@ class TemperatureViewModel:ViewModel() {
     //传感器支持测试类型：体温，体温+环境温度
     val supportTest:MutableLiveData<TempSensorType> by lazy {
         val mutableLiveData = MutableLiveData<TempSensorType>()
-        mutableLiveData.value=TempSensorType.NONE
+        mutableLiveData.value=TempSensorType.BODY_TEMP
         mutableLiveData
     }
 

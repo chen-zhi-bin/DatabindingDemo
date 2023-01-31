@@ -73,21 +73,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
-<!--    价格-->
     <EditText
-        android:id="@+id/currentPriseEt"
+        android:id="@+id/editTextNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline20"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    股票数量-->
     <EditText
-        android:id="@+id/stockCountEt"
+        android:id="@+id/editTextNumber2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -97,9 +95,8 @@
         app:layout_constraintStart_toStartOf="@+id/guideline20"
         app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
-<!--    总价-->
     <TextView
-        android:id="@+id/totalPriseTv"
+        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0.00"

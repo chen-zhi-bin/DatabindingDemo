@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import androidx.core.widget.addTextChangedListener
+import com.program.databindingdemo.views.PriseNumberFilter
 import kotlinx.android.synthetic.main.activity_stock.*
 
 class StockActivity : AppCompatActivity() {
@@ -26,6 +27,7 @@ class StockActivity : AppCompatActivity() {
      * 设置相关事件监听
      */
     private fun initEvent() {
+        currentPriseEt.filters= arrayOf(PriseNumberFilter())
         currentPriseEt.addTextChangedListener (object :TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
@@ -43,20 +45,20 @@ class StockActivity : AppCompatActivity() {
                 }
                 Log.d(TAG,"text ==> $s")
                 val value:String = s.toString()
-                if (value.contains(".")){
-                    //包含小数点
-                    //456.45655
-                    //拿到小数点位置进行判断
-                    val pointIndex:Int=value.indexOf(".")
-                    //总的长度-小数点的位置>3
-                    //456.4655-->首先是判断
-                    //index=3,length=8
-                    //8-3=5
-                    if (value.length-pointIndex>3){
-                        //进行删除
-                        s?.delete(pointIndex+2,value.length-1)
-                    }
-                }
+//                if (value.contains(".")){
+//                    //包含小数点
+//                    //456.45655
+//                    //拿到小数点位置进行判断
+//                    val pointIndex:Int=value.indexOf(".")
+//                    //总的长度-小数点的位置>3
+//                    //456.4655-->首先是判断
+//                    //index=3,length=8
+//                    //8-3=5
+//                    if (value.length-pointIndex>3){
+//                        //进行删除
+//                        s?.delete(pointIndex+2,value.length-1)
+//                    }
+//                }
                 prise=value.toFloat()
                 handlePrise()
             }

@@ -1,6 +1,5 @@
 package com.program.databindingdemo
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -45,6 +44,15 @@ class TemperatureActivity : AppCompatActivity() {
                     }
                 }
             })
+
+            bodyTempValue.observe(that, Observer {
+                //todo:
+                binding.bodyTempValue = it
+            })
+            envTempValue.observe(that, Observer {
+                binding.envTempValue = it
+            })
+
         }
     }
 }

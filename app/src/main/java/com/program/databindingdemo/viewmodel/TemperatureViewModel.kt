@@ -15,7 +15,15 @@ class TemperatureViewModel:ViewModel() {
 
     //关心数值:体温，环境温度
     //体温
-    val bodyTempValue=MutableLiveData<Float>()
+    val bodyTempValue by lazy {
+        val mutableLiveData = MutableLiveData<Float>()
+        mutableLiveData.value=36.2f
+        mutableLiveData
+    }
     //环境温度
-    val evnTempValue=MutableLiveData<Float>()
+    val envTempValue by lazy {
+        val mutableLiveData = MutableLiveData<Float>()
+        mutableLiveData.value=20.0f
+        mutableLiveData
+    }
 }

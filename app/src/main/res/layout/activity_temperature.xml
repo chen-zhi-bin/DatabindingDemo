@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TemperatureActivity">
+
+
+        <!--    只有体温-->
+        <ViewStub
+            android:id="@+id/bodyTempView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/item_body_temperature" />
+
+        <!--    支持体温和环境温度-->
+        <ViewStub
+            android:id="@+id/bodyAndEvnTempView"
+            android:layout="@layout/item_body_and_env_temperature"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ViewStub
+            android:id="@+id/noSupportView"
+            android:layout="@layout/item_not_support_temperature"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/minus_btn"
+        android:layout_width="80dp"
+        android:text="-"
+        android:background="@drawable/shape_num_btn_bg_left"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="30sp"/>
+    <EditText
+        android:id="@+id/value_edt"
+        android:focusable="false"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_number_inp_bg"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="0" />
+    <TextView
+        android:id="@+id/puls_btn"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/selector_num_btn_bg_right"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="+"/>
+</LinearLayout>

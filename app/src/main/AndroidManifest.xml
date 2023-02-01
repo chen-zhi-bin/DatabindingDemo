@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.program.databindingdemo">
-
-<!--    <uses-feature android:name="android.hardware.type.watch" />-->
-
+    <!-- <uses-feature android:name="android.hardware.type.watch" /> -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,19 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DatabindingDemo">
-        <activity android:name=".StockSellActivity">
+        <activity android:name=".InverseBindingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".StockActivity">
-           </activity>
-        <activity android:name=".TemperatureActivity">
+            </intent-filter></activity>
+        <activity android:name=".StockSellActivity">
 
         </activity>
-        <activity android:name=".TaobaoActivity"></activity>
+        <activity android:name=".StockActivity"></activity>
+        <activity android:name=".TemperatureActivity"></activity>
+        <activity android:name=".TaobaoActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

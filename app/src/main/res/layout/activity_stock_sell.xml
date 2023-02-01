@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="com.program.databindingdemo.utils.Converter"/>
+
         <variable
             name="viewModel"
             type="com.program.databindingdemo.viewmodel.StockSellViewModel" />
@@ -100,7 +102,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="@={viewModel.stockCount}"
+            android:text="@={Converter.int2String(viewModel.stockCount)}"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline20"

@@ -9,7 +9,7 @@ class StockSellViewModel:ViewModel() {
     val currentPrise = MutableLiveData<String>()
 
     //数量
-    val stockCount = MutableLiveData<String>()
+    val stockCount = MutableLiveData<Int>()
 
     //是否同意协议
     val agreement=MutableLiveData<Boolean>()
@@ -23,7 +23,7 @@ class StockSellViewModel:ViewModel() {
 
     public fun updateTotalPrise(){
         val currentPrise = currentPrise.value?.toFloat()?:0.0f
-        val stockCount = stockCount.value?.toInt()?:0
+        val stockCount = stockCount.value?:0
         val result = currentPrise * stockCount
 //        val totalPrise = String.format("%f.2d", result)
         totalPrise.value = result
